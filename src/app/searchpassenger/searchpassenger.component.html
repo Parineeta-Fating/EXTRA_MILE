@@ -1,0 +1,33 @@
+<p>searchpassenger works!</p>
+
+<table>
+    <tr>
+        <td>Enter Passenger ID <input type="text" [(ngModel)]="srchId"><button (click)="searchById()">Search</button> </td>  </tr>
+    <!--<tr>     
+        <td>Enter Price Range From <input type="text" [(ngModel)]="lowPrice"> To <input type="text" [(ngModel)]="highPrice">
+            <button (click)="searchByPrice()">Search</button> </td>        
+        </tr>  -->
+</table>
+<div>
+    <table>
+        <thead style="color: blue;">
+            <th>Passenger ID</th>
+            <th> Passenger Name</th>
+            <th> Passenger Age</th>
+            <th> Gender</th>
+            <th>Booking ID</th>
+            <th>Bus ID</th>
+            <th>Seat ID</th>
+        </thead>
+        <tr *ngFor="let p of pass">
+                <td> {{p.passengerId}}</td>
+                <td> {{p.passengerName}}</td>
+                <td> {{p.passAge}}</td>
+                <td> {{p.gender}}</td>
+                <td> {{p.bookingId}}</td>
+                <td> {{p.busId}}</td>
+                <td> {{p.seatId}}</td>
+        </tr>
+        </table>
+    
+</div>

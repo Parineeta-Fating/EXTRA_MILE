@@ -1,0 +1,46 @@
+<h2 class="text-center" >MY DASHBOARD</h2>
+{{userDetails.userId}}
+
+<div>
+<div class="container"  >
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <h4>Welcome {{userDetails.firstName}}!</h4>
+        <ul class="nav nav-tabs">
+          <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" ><a routerLink="/myBookings">My Bookings</a></li>
+          <li role="presentation" routerLinkActive="active" ><a routerLink="/profile" >Profile</a></li>
+          <li role="presentation" routerLinkActive="active" ><a routerLink="/changepassword" >Change Password</a></li>
+          <li role="presentation" routerLinkActive="active" ><a routerLink="/myWallet" >My Wallet</a></li>
+          <!-- <li role="presentation" routerLinkActive="active" ><a routerLink="/feedback" >Feedback</a></li> -->
+          
+        </ul>
+      </div>
+    </div>
+    <div class="row mt-5" style="margin-top: 10px;" >
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        <router-outlet></router-outlet>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div>
+    <h1>MY DASHBOARD</h1>
+    <nav>
+        <li>Hello {{userDetails.firstName}}!</li>
+    </nav>
+
+    <ul class="dashboard-menu">
+        <li><a routerLink=""></a></li>
+        <li><a routerLink="myBookings">My Bookings</a></li>
+        <li><a routerLink="profile">profile</a></li>
+        <li><a routerLink = "myWallet">My Wallet</a></li>
+        <li><a routerLink = "feedback">Feedback</a></li>
+        <li><a routerLink = "changepassword">Change password</a></li>
+    </ul>
+</div>
+<br><br><br><br><br><br>
+<div>
+    <router-outlet></router-outlet>
+</div> -->

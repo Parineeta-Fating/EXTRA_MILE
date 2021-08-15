@@ -1,0 +1,66 @@
+
+<div>
+    <form #myForm="ngForm" (ngSubmit)="saveBus()">
+        <table>
+            <tr>
+                <td><label for="busid">BUS ID</label></td>
+                <td><input type="text" class="form-control" name="busid" [(ngModel)]="bus.busid" required></td>
+            </tr>
+            <tr>
+                <td><label for="busname">BUS NAME</label></td>
+                <td><input type="text" class="form-control" name="busname" [(ngModel)]="bus.busname" required></td>
+            </tr>
+            <tr>
+                <td><label for="bustype">BUS TYPE</label></td>
+                <td><input type="text" class="form-control" name="bustype" [(ngModel)]="bus.bustype" required></td>
+            </tr>
+            <tr>
+                <td><label for="durationoftravel">DURATION OF TRAVEL</label></td>
+                <td><input type="text" class="form-control" name="durationoftravel" [(ngModel)]="bus.durationoftravel" required></td>
+            </tr>
+            <tr>
+                <td><label for="arrivaltime">ARRIVAL TIME</label></td>
+                <td><input type="text" class="form-control" name="arrivaltime" [(ngModel)]="bus.arrivaltime" required></td>
+            </tr>
+            <tr>
+                <td><label for="departuretime">DEPARTURE TIME</label></td>
+                <td><input type="text" class="form-control" name="departuretime" [(ngModel)]="bus.departuretime" required></td>
+            </tr>
+            <tr>
+                <td><label for="availableseats">AVAILABLE SEATS</label></td>
+                <td><input type="text" class="form-control" name="availableseats" [(ngModel)]="bus.availableseats" required></td>
+            </tr>
+            <tr>
+                <td><label for="totalseats">TOTAL SEATS</label></td>
+                <td><input type="text" class="form-control" name="totalseats" [(ngModel)]="bus.totalseats" required></td>
+            </tr>
+            <tr>
+                <td><label for="fare">FARE</label></td>
+                <td><input type="text" class="form-control" name="fare" [(ngModel)]="bus.fare" required></td>
+            </tr>
+            <tr>
+                <td><label for="routeid">ROUTE ID</label></td>
+                <td><input type="text" class="form-control" name="routeid" [(ngModel)]="bus.routeid" required></td>
+            </tr>
+            <tr>
+                <td><label for="distance">DISTANCE</label></td>
+                <td><input type="text" class="form-control" name="distance" [(ngModel)]="bus.distance" required></td>
+            </tr>
+            <tr>
+                <td><label for="departuredate">DEPARTURE DATE</label></td>
+                <td><input type="date" class="form-control" name="departuredate" [(ngModel)]="bus.departuredate" required></td>
+            </tr>
+            <tr>
+                <td><label for="arrivaldate">ARRIVAL DATE</label></td>
+                <td><input type="date" class="form-control" name="arrivaldate" [(ngModel)]="bus.arrivaldate" required></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><input class="btn btn-secondary" type="submit" value="Save BUS" [disabled]="!myForm.valid"></td>
+            </tr>
+        </table>
+
+
+    </form>
+</div>

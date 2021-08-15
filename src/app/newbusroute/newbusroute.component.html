@@ -1,0 +1,25 @@
+
+
+<div class="form-group" text-align=center>
+    <form #myForm="ngForm" (ngSubmit)="saveData()">
+        <table>
+            <tr>
+                <td><label for="routeid">ROUTE ID</label></td>
+                <td><input type="text" class="form-control" name="routeid"[(ngModel)]="route.routeid" required></td>
+            </tr>
+            <tr>
+                <td><label for="source">SOURCE</label></td>
+                <td><input type="text" class="form-control" name="source"[(ngModel)]="route.source" required></td>
+            </tr>
+            <tr>
+                <td><label for="destination">DESTINATION</label></td>
+                <td><input type="text"  class="form-control" name="destination"[(ngModel)]="route.destination" required></td>
+            </tr>
+            <br>
+            <tr>
+                <td></td>
+                <td><input class="btn btn-secondary" type="submit" value="Save Route"[disabled]="!myForm.valid"></td>
+            </tr>
+        </table>
+    </form>
+</div>

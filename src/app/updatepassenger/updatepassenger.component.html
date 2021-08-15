@@ -1,0 +1,43 @@
+<p>updatepassenger works!</p>
+
+<div>
+    <form #myForm="ngForm" (ngSubmit)="saveData()">
+
+        <table>
+                <tr>
+                    <td><label for="passengerId">Passenger ID</label> </td>   
+                    <td><input  type="text" name="passengerid" [(ngModel)]="pass.passengerId" required></td>       
+                </tr>
+                <tr>
+                    <td><label for="passengerName">Passenger Name</label> </td>   
+                    <td><input  type="text" name="passengerName" [(ngModel)]="pass.passengerName" required></td>       
+                </tr>
+                <tr>
+                    <td><label for="passAge">Passenger Age</label> </td>   
+                    <td><input  type="text" name="passAge" [(ngModel)]="pass.passAge" required></td>       
+                </tr>
+                <tr>
+                    <td><label for="gender">Gender</label> </td>   
+                    <td><input  type="text" name="gender" [(ngModel)]="pass.gender" required></td>       
+                </tr>
+                <tr>
+                    <td><label for="bookingId">Booking ID</label> </td>   
+                    <td><input  type="text" name="bookingId" [(ngModel)]="pass.bookingId" required></td>       
+                </tr>
+                <tr>
+                    <td><label for="busId">Bus ID</label> </td>   
+                    <td><input  type="text" name="busId" [(ngModel)]="pass.busId" required></td>       
+                </tr>
+                <tr>
+                    <td><label for="seatId">Seat ID</label> </td>   
+                    <td><input  type="text" name="seatId" [(ngModel)]="pass.seatId" required></td>       
+                </tr>
+                <tr>
+                    <td></td>   
+                    <td><input type="submit" value="Save Passenger" [disabled]="!myForm.valid"></td>       
+                </tr>
+        </table>
+
+    </form>
+
+</div>

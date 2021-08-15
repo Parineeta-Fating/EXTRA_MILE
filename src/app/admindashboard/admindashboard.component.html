@@ -1,0 +1,39 @@
+<h1 class="text-center">Hello @ADMIN</h1>
+<hr>
+<!-- <div class="nav"> -->
+
+<div class="text-center">
+<div class="btn-group.text-center" role="group" aria-label="Basic example" >
+
+<div>
+  <button class="btn btn-info" routerLink="showbuses">VIEW Buses</button>
+
+  <button class="btn btn-info" routerLink="newbus">ADD BUS</button>
+
+  <button class="btn btn-info" routerLink="editbus">EDIT BUS</button>
+ 
+    <button  class="btn btn-info" routerLink="addseat">ADD SEATS</button>
+  
+</div>
+<br>
+<div>
+<button class="btn btn-info"  routerLink="busroutes">VIEW ROUTES</button>
+
+  <button class="btn btn-info" routerLink="addroute">ADD ROUTE</button>
+
+  <button class="btn btn-info" routerLink="editroute">EDIT ROUTE</button>
+</div>
+<br>
+
+
+<div>
+  <button class="btn btn-info" routerLink="adminanalytics">ADMIN ANALYSIS</button>
+ <br><!-- <a routerLink="adminanalytics">ADMIN ANALYSIS</a>-->
+</div>
+</div>
+</div>
+<!-- </div> -->
+<div class="routing">
+
+  <router-outlet></router-outlet>
+</div>

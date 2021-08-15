@@ -1,0 +1,10 @@
+.dashboard-menu {
+    
+    list-style-type: none;
+    
+}
+.dashboard-menu li {
+    text-decoration-style: none;
+    float: left;
+    padding: 2%;
+}

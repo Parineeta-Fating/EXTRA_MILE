@@ -1,0 +1,30 @@
+
+        <h3>User Login</h3>
+                    <div>
+                        <form #loginForm="ngForm" (ngSubmit)="formSubmit(loginForm)"novalidate></form>
+                    
+                    <table class="table table-striped table-hover">
+                        
+                            <label class="form-label" for="EMAIL">Enter Mail ID</label>
+                            <input #EMAIL="ngModel" id="EMAIL" type="text" name="email" [(ngModel)]="srchId" class="form-control" required 
+                             pattern="[a-z0-9._%+-]+@[a-z0-9-]+\.[a-z]{2,4}$">
+                                <div *ngIf="EMAIL.invalid && (EMAIL.dirty ||EMAIL.touched)" style="color: red;">Please Enter Correct Email</div>
+                                <label  class="form-label" for="PASSWORD">Password</label>   
+                                <input #PASSWORD="ngModel" id="PASSWORD" type="password" name="password" [(ngModel)]="passw" class="form-control" required>      
+                                <!-- <div *ngIf="PASSWORD.invalid && (PASSWORD.dirty ||PASSWORD.touched)" style="color: red;">Please Enter Correct Password</div> -->
+                                <div *ngIf="PASSWORD.invalid && (PASSWORD.dirty ||PASSWORD.touched)" style="color: red;">
+                                    <div *ngIf="PASSWORD.errors?.required">password is required</div>
+                                    <div *ngIf="PASSWORD.errors?.minlength">Please Enter Correct Password</div>
+                                    
+                                </div>
+                                <!-- <td> <input type="reset" value="Reset" [disabled]="!loginForm.valid" (click)="checkpass()"></td> -->
+                                <input type="submit" value="Login"[disabled]="!loginForm.valid" (click)="searchById()" class="btn btn-primary">
+                                <div style="color: red;">{{checking}}</div>  
+                            
+                            
+                    </table>
+                </div>
+
+                    
+                        
+                    

@@ -1,0 +1,25 @@
+<p>showpassenger works!</p>
+<table>
+    <thead style="color: blue;">
+        <th>Passenger ID</th>
+        <th> Passenger Name</th>
+        <th> Passenger Age</th>
+        <th> Gender</th>
+        <th> Booking ID</th>
+        <th> Bus ID</th>
+        <th> Seat ID</th>
+    </thead>
+    <tr *ngFor="let p of pass">
+            <td> {{p.passengerId}}</td>
+            <td> {{p.passengerName}}</td>
+            <td> {{p.passAge}}</td>
+            <td> {{p.gender}}</td>
+            <td> {{p.bookingId}}</td>
+            <td> {{p.busId}}</td>
+            <td> {{p.seatId}}</td>
+            <td> <button (click)="editInfo(p.passengerId)">Edit</button>
+            
+                <button (click)="deleteRow(p.passengerId)">Delete</button>
+            </td>
+    </tr>
+    </table>

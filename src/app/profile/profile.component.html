@@ -1,0 +1,36 @@
+<form #profileForm="ngForm" (ngSubmit)="saveData()">
+    <div>
+        <label for="userid" class="form-label" >User Id: </label>
+        <input id="userid" class="form-control" type="text" name="userid" [(ngModel)] = 'userDetails.userId' disabled>
+    </div>
+    <div>
+        <label for="username" class="form-label" >User Name: </label>
+        <input id="username" class="form-control"  type="text" name="userfirstname" [(ngModel)] = "userDetails.firstName">
+    </div>
+
+    <div>
+        <label for="useremail" class="form-label" >Email:</label>
+        <input id="useremail" class="form-control"  type="text" name="usermailid" [(ngModel)]='userDetails.mailId' disabled>
+    </div>
+    
+    <div>
+        <label for="userphone" class="form-label" >Phone:</label>
+        <input id="userphone" class="form-control"  type="text" name="userphone" [(ngModel)] = "userDetails.phoneNumber"
+        pattern="[1-9]{1}[0-9]{9}">
+    </div>
+
+    <div>
+        <label for="userdob" class="form-label" >Date Of Birth:</label>
+        <input id="userdob" class="form-control"  type="date" name="userdob" [(ngModel)] = 'userDetails.dob' >
+    </div>
+     <div>
+        <label for="useraddress" class="form-label" >Address:</label>
+        <input id="useraddress" class="form-control" type="text" [value] = 'userDetails.address'>
+    </div> 
+
+    <input type="submit" class="btn btn-primary" name="submit" value="save" [disabled] = !profileForm.valid>
+   
+</form>
+
+
+

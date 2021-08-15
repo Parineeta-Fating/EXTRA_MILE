@@ -1,0 +1,54 @@
+<html>
+<h3> Cancel Booking </h3>
+<!-- <p class = topnav>CANCEL BOOKING</p><br> -->
+<body>
+
+<div class="bookingid">
+<div class="signsection">
+
+<label for="bookingId"><b>Enter your Booking ID </b></label>
+<form>
+<input type="text" name="booking id" placeholder="BOOKING ID" [(ngModel)]="bookingId"required><br>
+<button class="btn btn-info" (click)="search1()">search</button>
+</form>
+</div>
+<div class="container">
+<table >
+                    
+<thead>
+<th> Passenger ID </th>
+<th> Passenger Name </th>
+<th> Passenger Age </th>
+<th> Passenger Gender</th>
+<th> Booking ID </th>
+<th> Passenger ID</th>
+<th> Seat ID</th>
+<th> Action </th>
+</thead>
+<!--<tr *ngFor =" let p of passenger;let i=index">-->
+<tr>
+<td> {{passenger.passengerId}}</td>
+<td> {{passenger.passengerName}}</td>
+<td> {{passenger.passAge}}</td>
+<td> {{passenger.gender}}</td>
+<td>{{passenger.bookingId}}</td>
+<td>{{passenger.busId}}</td>
+<td>{{passenger.seatId}}</td>
+<button class="btn btn-info" (click)="delete()"> Cancel Booking</button>
+</tr>
+
+</table>
+
+
+</div>
+
+</div>
+<div *ngIf="deleted"> Cancellation Confirmed
+</div>
+
+
+
+
+
+</body>
+</html>

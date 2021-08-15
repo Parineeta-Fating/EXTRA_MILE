@@ -1,0 +1,20 @@
+
+
+<table class="table">
+    <thead class="thead-dark">
+        <th>ROUTE ID</th>
+        <th>SOURCE</th>
+        <th>DESTINATION</th>
+        <th>ACTION</th>
+    </thead>
+
+    <tr *ngFor="let r of route">
+        <td>{{r.routeid}}</td>
+        <td>{{r.source}}</td>
+        <td>{{r.destination}}</td>
+        <td>
+            <button class="btn btn-primary btn-lg active" (click)="editInfo(r.routeid)">EDIT</button>
+           
+        </td>
+    </tr>
+</table>
