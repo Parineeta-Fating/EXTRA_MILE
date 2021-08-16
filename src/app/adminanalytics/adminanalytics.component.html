@@ -1,168 +1,167 @@
-
-
-
 <hr>
-<button (click)="fetchbookings()" class="btn btn-primary">FETCH BOOKING RECORDS</button>
-<br><br>
-<button (click)="fetchuser()" class="btn btn-primary">FETCH REGISTERED USERS</button>
-<br><br>
-<button (click)="fetchbookhist()" class="btn btn-primary">FETCH ALL TIME BOOKING HISTORY</button>
-<br><br>
-<button (click)="fetchpasshist()" class="btn btn-primary">FETCH PASSENGER HISTORY</button>
-<br><br>
-<button (click)="fetchfeedhist()" class="btn btn-primary">FETCH PASSENGER FEEDBACKS</button>
-<br>
+<div>
+    <button (click)="fetchbookings()" class="btn btn-primary">FETCH BOOKING RECORDS</button>
+    <br><br>
+    <button (click)="fetchuser()" class="btn btn-primary">FETCH REGISTERED USERS</button>
+    <br><br>
+    <button (click)="fetchbookhist()" class="btn btn-primary">FETCH ALL TIME BOOKING HISTORY</button>
+    <br><br>
+    <button (click)="fetchpasshist()" class="btn btn-primary">FETCH PASSENGER HISTORY</button>
+    <br><br>
+    <button (click)="fetchfeedhist()" class="btn btn-primary">FETCH PASSENGER FEEDBACKS</button>
+    <br>
+</div>
 <div class="cen">
-<div class="form-group"  *ngIf="showbookings">
+    <div class="form-group" *ngIf="showbookings">
 
-    <form #myForm="ngForm"  (ngSubmit)="fetchbookingsbydates()">
-        <hr>
-        <table>
-            <tr>
-                <td><label for="date2">FROM DATE</label></td>
-                <td><input type="date" name="date2"[(ngModel)]="date2" required></td>
-            </tr>
-            <tr>
-                <td><label for="date1"></label>TO DATE</td>
-                <td><input type="date" name="date1"[(ngModel)]="date1" required></td>
-            </tr>
-            
+        <form #myForm="ngForm" (ngSubmit)="fetchbookingsbydates()">
+            <hr>
+            <table class="table table-striped table-hover">
+                <tr>
+                    <td><label for="date2">FROM DATE</label></td>
+                    <td><input type="date" name="date2" [(ngModel)]="date2" required></td>
+                </tr>
+                <tr>
+                    <td><label for="date1"></label>TO DATE</td>
+                    <td><input type="date" name="date1" [(ngModel)]="date1" required></td>
+                </tr>
+
+            </table>
+
+            <button (click)="fetchbookingsbydates()" class="btn btn-primary">GET Recordss</button>
+            <hr>
+        </form>
+
+        <table class="table">
+            <thead class="thead-dark">
+
+                <th>BOOKING ID</th>
+                <th>DATE OF TRAVEL</th>
+                <th>BUS ID</th>
+
+                <th>NO OF TICKETS</th>
+                <th>EMAIL ID</th>
+                <th>PHONE</th>
+                <th>BOOKING DATE</th>
+                <th>STATUS</th>
+
+            </thead>
+            <tbody>
+                <tr *ngFor="let b of bookings">
+                    <td>{{b.bookingId}}</td>
+                    <td>{{b.dateOfTravek}}</td>
+                    <td>{{b.busId}}</td>
+
+                    <td>{{b.noOfTickets}}</td>
+                    <td>{{b.emailId}}</td>
+                    <td>{{b.phoneNo}}</td>
+                    <td>{{b.dateOfBooking}}</td>
+                    <td>{{b.status}}</td>
+
+                </tr>
+            </tbody>
         </table>
-    
-        <button (click)="fetchbookingsbydates()" class="btn btn-primary">GET Recordss</button>
-<hr>
-    </form>
-    
-    <table class="table">
-        <thead class="thead-dark">
-           
-            <th>BOOKING ID</th>
-            <th>DATE OF TRAVEL</th>
-            <th>BUS ID</th>
-            
-            <th>NO OF TICKETS</th>
-            <th>EMAIL ID</th>
-            <th>PHONE</th>
-            <th>BOOKING DATE</th>
-            <th>STATUS</th>
-            
-        </thead>
-        <tbody>
-        <tr *ngFor="let b of bookings">
-            <td>{{b.bookingId}}</td>
-            <td>{{b.dateOfTravek}}</td>
-            <td>{{b.busId}}</td>
-           
-            <td>{{b.noOfTickets}}</td>
-            <td>{{b.emailId}}</td>
-            <td>{{b.phoneNo}}</td>
-            <td>{{b.dateOfBooking}}</td>
-            <td>{{b.status}}</td>
-          
-        </tr>
-    </tbody>
-    </table>
-</div>
-<div *ngIf="showuser">
-    <br>
-    <br>
-    <table class="table">
-        <thead class="thead-dark">
-            <td>USER ID</td>
-            <td>USER NAME</td>
-            <td>MAIL ID</td>
-            <td>MOBILE NUMBER</td>
-            <td>DOB</td>
-            <td>ADDRESS</td>
+    </div>
+    <div *ngIf="showuser">
+        <br>
+        <br>
+        <table class="table">
+            <thead class="thead-dark">
+                <th>USER ID</th>
+                <th>USER NAME</th>
+                <th>MAIL ID</th>
+                <th>MOBILE NUMBER</th>
+                <th>DOB</th>
+                <th>ADDRESS</th>
 
-        </thead>
-        <tbody>
-            <tr *ngFor="let u of user">
-                <td>{{u.userId}}</td>
-                <td>{{u.firstName}} {{u.lastName}}</td>
-                <td>{{u.mailId}}</td>
-                <td>{{u.phoneNumber}}</td>
-                <td>{{u.dob}}</td>
-                <td>{{u.address}}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-<div *ngIf="showbookhist">
-    <br>
-    <br>
-    <table class="table">
-        <thead class="thead-dark">
-            <th>BOOKING ID</th>
-            <th>DATE OF TRAVEL</th>
-            <th>BUS ID</th>
-            
-            <th>NO OF TICKETS</th>
-            <th>EMAIL ID</th>
-            <th>PHONE</th>
-            <th>BOOKING DATE</th>
-            
-            
-        </thead>
-        <tbody>
-        <tr *ngFor="let x of bookhist">
-            <td>{{x.bookingId}}</td>
-            <td>{{x.dateOfTravek}}</td>
-            <td>{{x.busId}}</td>
-           
-            <td>{{x.noOfTickets}}</td>
-            <td>{{x.emailId}}</td>
-            <td>{{x.phoneNo}}</td>
-            <td>{{x.dateOfBooking}}</td>
-            
-          
-        </tr>
-    </tbody>
-    </table>
-
-</div>
-<div *ngIf="showpasshist">
-    <br>
-    <br>
-    <table class="table">
-        <thead class="thead-dark">
-            <th>PASSENGER ID</th>
-            <th>PASSENGER NAME</th>
-            <th>AGE</th>
-            
-            <th>GENDER</th>
-            <th>BOOKING ID</th>
-            <th>BUS ID</th>                        
-        </thead>
-        <tbody>
-            <tr *ngFor="let p of passhist">
-                <td>{{p.passengerId}}</td>
-                <td>{{p.passengerName}}</td>
-                <td>{{p.passAge}}</td>
-                
-                <td>{{p.gender}}</td>
-                <td>{{p.bookingId}}</td>
-                <td>{{p.busId}}</td>
-            </tr>
-        </tbody>
+            </thead>
+            <tbody>
+                <tr *ngFor="let u of user">
+                    <td>{{u.userId}}</td>
+                    <td>{{u.firstName}} {{u.lastName}}</td>
+                    <td>{{u.mailId}}</td>
+                    <td>{{u.phoneNumber}}</td>
+                    <td>{{u.dob}}</td>
+                    <td>{{u.address}}</td>
+                </tr>
+            </tbody>
         </table>
-</div>
+    </div>
 
-<div *ngIf="showfeedhist">
-    <br>
-    <br>
-    <table class="table">
-    <thead class="thead-light">
-        <td>BUS ID</td>
-        <td>CUSTOMER FEEDBACK</td>
-    </thead>
-    <tbody>
-        <tr *ngFor="let f of feedhist">
-            <td>{{f.busId}}</td>
-            <td>{{f.feedbackMsg}}</td>
-        </tr>
-    </tbody>
-</table>
-</div>
+    <div *ngIf="showbookhist">
+        <br>
+        <br>
+        <table class="table">
+            <thead class="thead-dark">
+                <th>BOOKING ID</th>
+                <th>DATE OF TRAVEL</th>
+                <th>BUS ID</th>
+
+                <th>NO OF TICKETS</th>
+                <th>EMAIL ID</th>
+                <th>PHONE</th>
+                <th>BOOKING DATE</th>
+
+
+            </thead>
+            <tbody>
+                <tr *ngFor="let x of bookhist">
+                    <td>{{x.bookingId}}</td>
+                    <td>{{x.dateOfTravek}}</td>
+                    <td>{{x.busId}}</td>
+
+                    <td>{{x.noOfTickets}}</td>
+                    <td>{{x.emailId}}</td>
+                    <td>{{x.phoneNo}}</td>
+                    <td>{{x.dateOfBooking}}</td>
+
+
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div *ngIf="showpasshist">
+        <br>
+        <br>
+        <table class="table">
+            <thead class="thead-dark">
+                <th>PASSENGER ID</th>
+                <th>PASSENGER NAME</th>
+                <th>AGE</th>
+
+                <th>GENDER</th>
+                <th>BOOKING ID</th>
+                <th>BUS ID</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of passhist">
+                    <td>{{p.passengerId}}</td>
+                    <td>{{p.passengerName}}</td>
+                    <td>{{p.passAge}}</td>
+
+                    <td>{{p.gender}}</td>
+                    <td>{{p.bookingId}}</td>
+                    <td>{{p.busId}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="showfeedhist">
+        <br>
+        <br>
+        <table class="table">
+            <thead class="thead-light">
+                <th>BUS ID</th>
+                <th>CUSTOMER FEEDBACK</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let f of feedhist">
+                    <td>{{f.busId}}</td>
+                    <td>{{f.feedbackMsg}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

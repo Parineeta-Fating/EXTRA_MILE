@@ -23,7 +23,8 @@ export class SignupComponent implements OnInit {
  
   saveUserData()
   {
- 
+      this.nuser.role="user";
+      this.nuser.wallet=0;
       this.userservice.addNewUserDetails(this.nuser).subscribe(
         (data)=>{
           console.log("Return Value from REST"+data); 

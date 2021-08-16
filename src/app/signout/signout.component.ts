@@ -10,6 +10,9 @@ export class SignoutComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    sessionStorage.removeItem("userIdForStorage" );
+    sessionStorage.removeItem("userMailForStorage");
   }
 
 }

@@ -35,7 +35,7 @@ import { UserDetailsService } from '../user-details.service';
   styleUrls: ['./booking.component.css']
 })
 export class BookingComponent implements OnInit {
-
+  gender:string="";
   constructor(private busservice:BusService , private routeservice:RoutesService,
      private seatcservice:SeatsService,private passservice:PassengerService, private bookingservice:BookingService,
      private userservice:UserDetailsService, private paymentservice:PaymentService ) { 

@@ -1,32 +1,32 @@
 
-<h3>Book your Bus</h3>
-<div *ngIf ="!showTicket">
-    <form ><br>
-        <label for="Routes">Choose a route </label>
-     
-        <select name="routes" id="routes" [(ngModel)]="routeId">
-         
-          <optgroup label="Routes" *ngFor = "let r of routes">
-            
+<h3 style="margin-top: 20px;margin-bottom: 20px;text-align: center;">Book your Bus</h3>
+<div class="container">
+  <div class="row">
+    <div *ngIf="!showTicket">
+      <form><br>
+        <label for="Routes">Select Your Route </label>
+
+        <select class="form-select" name="routes" id="routes" [(ngModel)]="routeId">
+          <optgroup label="Routes" *ngFor="let r of routes">
             <option [value]="r.routeid">{{r.source}} to {{r.destination}}</option>
           </optgroup>
         </select>
-     
       </form>
+
       <br>
       <b>Select Departure Date</b>
 
-      <input type="date"  [(ngModel)] = "date1" [(ngModel)]="bo.dateOfTravek">
-    
-    
-    <br>
-    <button class="btn btn-info" (click)="searchForBus()" (click)="!isPaymentDone">search</button>
+      <input type="date" [(ngModel)]="date1" [(ngModel)]="bo.dateOfTravek">
 
-    <br>
-    <hr>
-    <div>
-    <table  class="table table-striped table-hover" >
-        <thead >
+
+      <br>
+      <button class="btn btn-info" (click)="searchForBus()" (click)="!isPaymentDone">search</button>
+
+      <br>
+      <hr>
+      <div>
+        <table class="table table-striped table-hover" style="width: 70%;margin-left: auto;margin-right: auto;" >
+          <thead>
             <th>Bus ID</th>
             <th>Bus Name</th>
             <th>Departure time</th>
@@ -34,141 +34,118 @@
             <th>Bus Type</th>
             <th>Fare</th>
             <th>Choose </th>
-        </thead>
-        <tr *ngFor = "let b of bus" class="tablehover">
+          </thead>
+          <tr *ngFor="let b of bus" class="tablehover " style="margin-top: 20px;">
             <td>{{b.busid}}</td>
             <td>{{b.busname}}</td>
             <td>{{b.departuretime}}</td>
             <td>{{b.arrivaltime}}</td>
             <td>{{b.bustype}}</td>
             <td>{{b.fare}}</td>
-            <td><input type="radio"  value="{{b.busid}}" [(ngModel)]="busidforseats" [(ngModel)]="pass.busId" [(ngModel)]="bo.busId"></td>
-        </tr>
-    
-    </table>
-    <br>
-    
-    <button class="btn btn-info" (click)="searchforSeats()">search</button>
-    
-    <br>
-    <hr>
-    <div *ngIf="showOtherFunctions">
-    <table class="table table-striped table-hover" >
-      <thead>
-          <th>Seat ID</th>
-          <th>Bus Id</th>
-          <th>Availablity</th>
-          <th>Choose </th>
-      </thead>
-      <tr *ngFor = "let s of seats" class="tablehover">
-          <td>{{s.seatId}}</td>
-          <td>{{s.busId}}</td>
-          <td>{{s.availability}}</td>
-          <td><input type="radio" value="{{s.seatId}}" [disabled] ="s.availability==0" [(ngModel)]="seatIdForPassenger"[(ngModel)]="pass.seatId" ></td>
-      </tr>
-    
-    </table>
-    <hr>
-    
-    
-    
-    <!-- Enter number of passengers
-    <input type="number" name="" id="" [(ngModel)]="bo.noOfTickets" [(ngModel)]="ticketquantity"> -->
-   
-    <div >
-        <form #myForm="ngForm" (ngSubmit)="saveBookingData()" >
-    
+            <td><input type="radio" class="form-check-input" value="{{b.busid}}" [(ngModel)]="busidforseats" [(ngModel)]="pass.busId"
+                [(ngModel)]="bo.busId"></td>
+          </tr>
+
+        </table>
+        <br>
+
+        <button class="btn btn-info" (click)="searchforSeats()">search</button>
+
+        <br>
+        <hr>
+        <div *ngIf="showOtherFunctions">
           
-            <table class="table table-striped table-hover" >
-                    <!-- <tr>
-                        <td><label for="passengerId">Passenger ID</label> </td>   
-                        <td><input  type="text" name="passengerid" [(ngModel)]="pass.passengerId" required></td>       
-                    </tr> -->
-                    <tr>
-                        <td><label for="passengerName">Passenger Name</label> </td>   
-                        <td><input  type="text" name="passengerName" [(ngModel)]="pass.passengerName" required></td>       
-                    </tr>
-                    <tr>
-                        <td><label for="passAge">Passenger Age</label> </td>   
-                        <td><input  type="text" name="passAge" [(ngModel)]="pass.passAge" required></td>       
-                    </tr>
-                    <tr>
-                        <td><label for="gender">Gender</label> </td>   
-                        <td><input  type="text" name="gender" [(ngModel)]="pass.gender" required></td>       
-                    </tr>
-                    <!-- <tr>
-                        <td><label for="bookingId">Booking ID</label> </td>   
-                        <td><input  type="text" name="bookingId" [(ngModel)]="pass.bookingId" [(ngModel)]="bo.bookingId"required></td>       
-                    </tr> -->
-                    <tr>
-                      <td><label for="emailId">Email ID</label> </td>   
-                      <td><input  type="text" name="emailId" [(ngModel)]="bo.emailId"  required></td>       
-                    </tr>
-                    <tr>
-                      <td><label for="phoneNo">Phone No</label> </td>   
-                      <td><input  type="text" name="emailId" [(ngModel)]="bo.phoneNo" required></td>       
-                    </tr>
-                    <tr>
-                        <td></td>   
-                        <td><input class="btn btn-info" type="submit" value="Save Passenger" [disabled]="!myForm.valid"></td>       
-                    </tr>
-                    
-                    
-    
-            </table>
-    
-        </form>
+          <table class="table table-striped table-hover" style="width: 70%;margin-left: auto;margin-right: auto;">
+            <thead>
+              <th>Seat ID</th>
+              <th>Bus Id</th>
+              <!-- <th>Availablity</th> -->
+              <th>Choose </th>
+            </thead>
+            <tr *ngFor="let s of seats" class="tablehover" >
+              <td>{{s.seatId}}</td>
+              <td>{{s.busId}}</td>
+              <!-- <td>{{s.availability}}</td> -->
+              <td><input type="radio" value="{{s.seatId}}" [disabled]="s.availability==0"
+                  [(ngModel)]="seatIdForPassenger" [(ngModel)]="pass.seatId"></td>
+            </tr>
+
+          </table>
+          <hr>
+
+
+          <div>
+            <form #myForm="ngForm" (ngSubmit)="saveBookingData()">
+
+
+              <table class="table table-striped table-hover" style="width: 70%;margin-left: auto;margin-right: auto;">
+                <tr>
+                  <td><label for="passengerName">Passenger Name</label> </td>
+                  <td><input type="text" name="passengerName" [(ngModel)]="pass.passengerName" required></td>
+                </tr>
+                <tr>
+                  <td><label for="passAge">Passenger Age</label> </td>
+                  <td><input type="text" name="passAge" [(ngModel)]="pass.passAge" required></td>
+                </tr>
+                <tr>
+                  <td><label for="gender">Gender</label> </td>
+                  <td><input type="text" name="passGender" [(ngModel)]=pass.gender required></td>
+                
+                 
+                </tr>
+                <tr>
+                  <td><label for="emailId">Email ID</label> </td>
+                  <td><input type="text" name="emailId" [(ngModel)]="bo.emailId" required></td>
+                </tr>
+                <tr>
+                  <td><label for="phoneNo">Phone No</label> </td>
+                  <td><input type="text" name="emailId" [(ngModel)]="bo.phoneNo" required></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><input class="btn btn-info" type="submit" value="Save Passenger" [disabled]="!myForm.valid"></td>
+                </tr>
+              </table>
+            </form>
+          </div>
+          <hr>
+
+          <br>
+
+          <div *ngIf="bookingIdCreated">
+            <div *ngIf="walletBalance!=null">
+              <div>
+                <strong>Your Wallet Balance Linked with {{bo.emailId}} is Rs {{walletBalance}} /-</strong>
+              </div>
+              <br>
+              <strong> Select Payment Method </strong>
+              <ul>
+                <select name="Payment Method" id="Payment Method" [(ngModel)]="PaymentOption">
+                  <optgroup label="Payement">
+                    <option value="CreditCard">Credit/Debit Card</option>
+                    <option value="Wallet" *ngIf="walletBalance>bus.fare">Wallet</option>
+                  </optgroup>
+                </select>
+              </ul>
+              <button class="btn btn-info" (click)="savepassenger()" (click)="!isPaymentDone">Pay And Proceed</button>
+            </div>
+          </div>
+          <hr>
+
+          <div *ngIf="isPaymentDone">
+
+            <h4 style="">Booking Success</h4>
+            <button class="btn btn-info" (click)="viewTicket()">View Ticket</button>
+          </div>
+
+        </div>
+      </div>
     </div>
-    <hr>
-    
-    <br>
-    
-    <div *ngIf="bookingIdCreated">
-    <div *ngIf="walletBalance!=null">
-    <div>
-    <strong>Your Wallet Balance Linked with {{bo.emailId}} is Rs {{walletBalance}} /-</strong>
-    </div>
-    <br>
-    <strong> Select Payment Method </strong>
-    <ul>
-      <select name="Payment Method" id="Payment Method" [(ngModel)]="PaymentOption">
-        <optgroup label="Payement" >
-          <option value="CreditCard">Credit/Debit Card</option>
-          <option value="Wallet" *ngIf="walletBalance>bus.fare" >Wallet</option>
-        </optgroup>
-      </select>
-    </ul>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <button class="btn btn-info" (click)="savepassenger()"(click)="!isPaymentDone">Pay And Proceed</button>
-    </div>
-    
-    </div>
-    <hr>
-    
-    <div *ngIf="isPaymentDone">
-    
-      <h4 style="">Booking Success</h4>
-      <button class="btn btn-info" (click) ="viewTicket()">View Ticket</button>
-    </div>
-    
-    </div>
-    </div>
-    </div>
-    
+
     <div *ngIf="showTicket" id="print-section">
 
-    
-     <h1>Ticket Booking {{isitSuccessfull}} </h1> 
+
+      <h1>Ticket Booking {{isitSuccessfull}} </h1>
       For Booking ID -{{bo.bookingId}} <br>
       Passenger Name -{{pass.passengerName}} <br>
       Date Of Departure -{{bo.dateOfTravek}} <br>
@@ -176,10 +153,7 @@
       BusId - {{busidforseats}}<br>
       Departure Time -{{selectedBus.departuretime}} <br>
       Arrival Time -{{selectedBus.arrivaltime}} <br>
-     
-      
-    
-    
     </div>
-    <!-- <button (click)="print()">Print</button> -->
 
+  </div>
+</div>

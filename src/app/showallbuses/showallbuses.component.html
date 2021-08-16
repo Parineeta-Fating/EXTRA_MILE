@@ -1,42 +1,50 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
 
+    
+    <table class="table table-striped table-hover">
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Travel Duration</th>
+            <th>Arrival Time</th>
+            <th>Departure Time</th>
+            <!-- <th>Available_Seats</th>-->
+            <th>Total Seats</th>
+            <th>Fare</th>
+            <th>Route ID</th>
+            <th>Distance</th>
+            <th>Departure Date</th>
+            <th>Arrival Date</th>
+            <th>ACTION</th>
 
-<table class="table">
-    <thead class="thead-dark">
-        <th>Bus_ID</th>
-        <th>Bus_Name</th>
-        <th>Bus_Type</th>
-        <th>Duration_Of_Travel</th>
-        <th>Arrival_Time</th>
-        <th>Departure_Time</th>
-        <th>Available_Seats</th>
-        <th>Total_Seats</th>
-        <th>Fare</th>
-        <th>Route_ID</th>
-        <th>Distance</th>
-        <th>Departure_Date</th>
-        <th>Arrival_Date</th>
-        <th>ACTION</th>
-
-    </thead>
-
-    <tr *ngFor="let b of bus">
-        <td>{{b.busid}}</td>
-        <td>{{b.busname}}</td>
-        <td>{{b.bustype}}</td>
-        <td>{{b.durationoftravel}}</td>
-        <td>{{b.arrivaltime}}</td>
-        <td>{{b.departuretime}}</td>
-        <td>{{b.availableseats}}</td>
-        <td>{{b.totalseats}}</td>
-        <td>{{b.fare}}</td>
-        <td>{{b.routeid}}</td>
-        <td>{{b.distance}}</td>
-        <td>{{b.departuredate}}</td>
-        <td>{{b.arrivaldate}}</td>
-       <td>
-           <button class="btn btn-primary btn-lg active" (click)="editInfo(b.busid)">EDIT</button>
-           <button class="btn btn-secondary btn-lg active" (click)="deleteSeatsData(b.busid)">DELETE SEATS</button>
-           <button  class="btn btn-secondary btn-lg active" (click)="deleteEntry(b.busid)">DELETE BUS</button>
-        </td>
-    </tr>
-</table>
+        </thead>
+        <tbody>
+            <tr *ngFor="let b of bus">
+                <td>{{b.busid}}</td>
+                <td>{{b.busname}}</td>
+                <td>{{b.bustype}}</td>
+                <td>{{b.durationoftravel}}</td>
+                <td>{{b.arrivaltime}}</td>
+                <td>{{b.departuretime}}</td>
+                <!-- <td>{{b.availableseats}}</td>-->
+                <td>{{b.totalseats}}</td>
+                <td>{{b.fare}}</td>
+                <td>{{b.routeid}}</td>
+                <td>{{b.distance}}</td>
+                <td>{{b.departuredate}}</td>
+                <td>{{b.arrivaldate}}</td>
+                <td>
+                    <button class="btn btn-primary btn-sm active" (click)="editInfo(b.busid)">EDIT</button>
+                    <button class="btn btn-secondary btn-sm active" (click)="deleteSeatsData(b.busid)">DELETE
+                        SEATS</button>
+                    <button class="btn btn-secondary btn-sm active" (click)="deleteEntry(b.busid)">DELETE BUS</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+</div>

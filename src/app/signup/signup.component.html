@@ -1,62 +1,49 @@
-<h3>Sign Up</h3>
-<div>
-    <form #myForm="ngForm" (ngSubmit)="saveUserData()">
- 
-        <!-- <table > -->
-                <!-- <label for="userId" class="form-label" >User ID</label>   
-                    <input #ui="ngModel" id="userId" class="form-control" type="text" name="userId" [(ngModel)]="nuser.userId" required>
-                     <div *ngIf="ui.errors?.required" style="color: red;">UserId is required</div> ////
-                    <div *ngIf="ui.invalid && (ui.dirty ||ui.touched)" style="color: red;">UserId is required</div> -->
-                
-                    <label for="firstName" class="form-label">First Name</label>    
-                   <input #ui="ngModel" id="firstName" class="form-control" type="text" name="firstName" [(ngModel)]="nuser.firstName" required>    
-                    <!-- <div *ngIf="ui.errors?.required" style="color: red;">First name is required</div> -->
-                    <div *ngIf="ui.invalid && (ui.dirty ||ui.touched)" style="color: red;">First name is required</div>
-                
-                    <label for="lastName" class="form-label">Last Name</label>   
-                    <input #ln="ngModel" id="lastName" class="form-control" type="text" name="lastName" [(ngModel)]="nuser.lastName" required>
-                    <!-- <div *ngIf="ui.errors?.required" style="color: red;">Last name is required</div>   -->
-                    <div *ngIf="ln.invalid && (ln.dirty ||ln.touched)" style="color: red;">Last name is required</div>    
-                
-                   <label for="mailId" class="form-label" >Mail Id</label>   
-                    <input #mi="ngModel" id="mailId" class="form-control" type="text" name="mailId" [(ngModel)]="nuser.mailId" [(ngModel)]="nuser.userId"  required>
-                    <!-- <div *ngIf="ui.errors?.required" style="color: red;">MailId is required</div>      -->
-                    <div *ngIf="mi.invalid && (mi.dirty ||mi.touched)" style="color: red;">MailId is required</div>
-                
-                   <label for="phoneNumber" class="form-label" >Phone Number</label>   
-                    <input #p="ngModel" id="phoneNumber" class="form-control" type="text" name="phoneNumber" [(ngModel)]="nuser.phoneNumber" required>
-                    <!-- <div *ngIf="ui.errors?.required" style="color: red;">Phone no. is required</div> -->
-                    <div *ngIf="p.invalid && (p.dirty ||p.touched)" style="color: red;">Phone no. is required</div>
-                
-                    <label for="password" class="form-label" >Password</label>  
-                    <input #ps="ngModel" id="password" class="form-control" type="password" name="password" [(ngModel)]="nuser.password" required>   
-                    <!-- <div *ngIf="ui.errors?.required" style="color: red;">Password is required</div> -->
-                    <div *ngIf="ps.invalid && (ps.dirty ||ps.touched)" style="color: red;">First name is required</div>
-                
-                    <label for="wallet" class="form-label" >Wallet</label>   
-                    <input #w="ngModel" id="wallet" class="form-control" type="text" name="wallet" [(ngModel)]="nuser.wallet" required>
-                    <!-- <div *ngIf="ui.errors?.required" style="color: red;">Wallet is required</div>     -->
-                    <div *ngIf="w.invalid && (w.dirty ||w.touched)" style="color: red;">Wallet is required</div>
-                
-                    <label for="dob" class="form-label" >DOB</label>   
-                    <input #d="ngModel" id="dob" class="form-control" type="date" name="dob" [(ngModel)]="nuser.dob" required>
-                    <!-- <div *ngIf="ui.errors?.required" style="color: red;">DOB is required</div>   -->
-                    <div *ngIf="d.invalid && (d.dirty ||d.touched)" style="color: red;">DOB is required</div> 
-                
-                    <!-- <label for="role" class="form-label" >Role</label>   
-                    <input #ui="ngModel" id="role" class="form-control" type="text" name="role" [(ngModel)]="nuser.role" required>
-                    <div *ngIf="ui.errors?.required" style="color: red;">Please enter your role </div>   ///
-                    <div *ngIf="ui.invalid && (ui.dirty ||ui.touched)" style="color: red;">Please enter your role </div>    -->
-                
-                    <label for="address" class="form-label" >Address</label>  
-                    <input #a="ngModel" id="address" class="form-control" type="text" name="address" [(ngModel)]="nuser.address" required>
-                    <!-- <div *ngIf="ui.errors?.required" style="color: red;">Address is required</div>      -->
-                    <div *ngIf="a.invalid && (a.dirty ||a.touched)" style="color: red;">Address is required</div>
-                
-                     
-                    <input name="submit"  type="submit" class="submitbtn" value="Save UserDetails" [disabled]="!myForm.valid" class="btn btn-primary">    
-                
- 
-    </form>
-    
+<h3 style="text-align: center;margin-bottom: 20px;margin-top: 50px;" >Sign Up</h3>
+<div class="container w-25">
+    <div class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div >
+            <form #myForm="ngForm" (ngSubmit)="saveUserData()">
+                <label for="firstName" class="form-label">First Name</label>
+                <input #ui="ngModel" id="firstName" class="form-control" type="text" name="firstName"
+                    [(ngModel)]="nuser.firstName" required>
+                <div *ngIf="ui.invalid && (ui.dirty ||ui.touched)" style="color: red;">First name is required</div>
+
+                <label for="lastName" class="form-label">Last Name</label>
+                <input #ln="ngModel" id="lastName" class="form-control" type="text" name="lastName"
+                    [(ngModel)]="nuser.lastName" required>
+                <div *ngIf="ln.invalid && (ln.dirty ||ln.touched)" style="color: red;">Last name is required</div>
+
+                <label for="mailId" class="form-label">Mail Id</label>
+                <input #mi="ngModel" id="mailId" class="form-control" type="text" name="mailId"
+                    [(ngModel)]="nuser.mailId" [(ngModel)]="nuser.userId" required>
+                <div *ngIf="mi.invalid && (mi.dirty ||mi.touched)" style="color: red;">MailId is required</div>
+
+                <label for="phoneNumber" class="form-label">Phone Number</label>
+                <input #p="ngModel" id="phoneNumber" class="form-control" type="text" name="phoneNumber"
+                    [(ngModel)]="nuser.phoneNumber" required>
+                <div *ngIf="p.invalid && (p.dirty ||p.touched)" style="color: red;">Phone no. is required</div>
+
+                <label for="password" class="form-label">Password</label>
+                <input #ps="ngModel" id="password" class="form-control" type="password" name="password"
+                    [(ngModel)]="nuser.password" required>
+                <div *ngIf="ps.invalid && (ps.dirty ||ps.touched)" style="color: red;">First name is required</div>
+
+                <label for="dob" class="form-label">DOB</label>
+                <input #d="ngModel" id="dob" class="form-control" type="date" name="dob" [(ngModel)]="nuser.dob"
+                    required>
+                <div *ngIf="d.invalid && (d.dirty ||d.touched)" style="color: red;">DOB is required</div>
+
+                <label for="address" class="form-label">Address</label>
+                <input #a="ngModel" id="address" class="form-control" type="text" name="address"
+                    [(ngModel)]="nuser.address" required>
+                <div *ngIf="a.invalid && (a.dirty ||a.touched)" style="color: red;">Address is required</div>
+
+                <input style="margin-bottom: 400px;margin-top: 20px;" name="submit" type="submit" class="submitbtn" value="Save UserDetails" [disabled]="!myForm.valid"
+                    class="btn btn-primary">
+
+
+            </form>
+        </div>
+        <div></div>
+    </div>
 </div>

@@ -35,6 +35,7 @@ import { AdminanalyticsComponent } from './adminanalytics/adminanalytics.compone
 import { ShowallbusroutesComponent } from './showallbusroutes/showallbusroutes.component';
 import { EditbusrouteComponent } from './editbusroute/editbusroute.component';
 import { SignoutComponent } from './signout/signout.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 
 
@@ -66,7 +67,8 @@ import { SignoutComponent } from './signout/signout.component';
     EditbusrouteComponent,
     AddnewseatsComponent,
     AdminanalyticsComponent,
-    SignoutComponent
+    SignoutComponent,
+    AboutusComponent
 
   ],
   imports: [

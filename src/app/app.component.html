@@ -8,50 +8,81 @@
 <!-- <app-signup></app-signup> -->
 
 <div id="header">
-    <h1 ><b>EXTRA MILE</b></h1>
-    <h5>~Travel your destiny with us~</h5>
+  <h1><b>EXTRA MILE</b></h1>
+  <h5>~Travel your destiny with us~</h5>
 </div>
 
 
 
 <div class="topnav">
-    <!-- <img class="logo-img" src="assets/bus.JPG" width="130" height="200" ALT="align box" ALIGN=CENTER> -->
-    <ul>
-   
+  <!--  -->
+  <ul>
+
     <li><a routerLink="signup">Signup</a></li>
     <li><a routerLink="userlogin">User Login</a></li>
     <li><a routerLink="adminlogin">Admin Login</a></li>
     <li><a routerLink="book">Book Bus</a></li>
     <li><a routerLink="cancel">Cancellation</a></li>
     <li><a routerLink="signout">Logout</a></li>
-    
+  </ul>
+    <img class="logo-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIT34yN7Q6lKBDnLsjhe8mSI0_nt7VqRphOQ&usqp=CAU" width="130px" height="100px" style="padding-right: 10px;" ALT="align box" ALIGN=CENTER>
 
-    <!-- <img src="assets/bus.JPG"  width="300px" height="10000px" > -->
-</ul>
-<!-- Image and text -->
-<!-- <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" routerLink="signout">Logout</a>
-      <img src="assets/bus.JPG" width="30" height="30" class="d-inline-block align-top" alt=""> 
-      
-    
-  </nav>-->
+
+ 
+
 
 </div>
-<div id="main" class="body">
-    <img src="/src/assets/bg.JPG" alt="">
-    
-<router-outlet></router-outlet>
+<div id="main" class="body bg-img"
+  style=" background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdm8MMLcfNXDdJ2TAHZ15xl_dlciamPvY-TQ&usqp=CAU');">
+
+
+  <router-outlet></router-outlet>
 </div>
 
-<div class="footer">
-    <p>© 2021 Larsen & Toubro Infotech Limited</p>
-  </div>
-  <!-- <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
-  </div> -->
-
-<!-- <div id="footer">
-    copyright
-</div> -->
 
 
+<div class="allButFooter">
+  <footer id="footer" class="footer-1">
+    <div class="main-footer widgets-dark typo-light">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="widget subscribe no-box">
+              <h5 class="widget-title">Extra Mile<span></span></h5>
+              <p>Extra Mile has strived to deliver easy booking solutions to its customers.
+                Extra Mile is a pioneer in providing end-to-end software and other value-added solutions to our
+                customers.
+              </p>
+            </div>
+          </div>
+
+
+
+
+
+          <div class="col-xs-12 col-sm-6 col-md-3" style="float: right; ">
+
+            <div class="widget no-box">
+              <h5 class="widget-title">Contact Us<span></span></h5>
+
+              <p><a href="mailto:extramile@gmail.com" title="glorythemes">extramile@gmail.com</a></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p>Copyright Larsen & Toubro Infotech Limited © 2021. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+</div>
